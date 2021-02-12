@@ -2,7 +2,8 @@
 <div style="background-color:burlywood"
 *ngFor="let productOuter of products">
 <!--ID: {{product.id}} <br/>-->
-<a [title] = "productOuter.name + ' details'">
+<a [title] = "productOuter.name + ' details'" 
+[routerLink]="['/products' , productOuter.id]">
 Name: {{productOuter.name}} <br/>
 </a>
 
