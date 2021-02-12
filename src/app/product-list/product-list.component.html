@@ -1,0 +1,28 @@
+<h2>Products List</h2>
+<div style="background-color:burlywood"
+*ngFor="let productOuter of products">
+<!--ID: {{product.id}} <br/>-->
+<a [title] = "productOuter.name + ' details'">
+Name: {{productOuter.name}} <br/>
+</a>
+
+<!--Price: {{product.price}} <br/>-->
+<p *ngIf="productOuter.description">
+Description: {{productOuter.description}} <br/>
+</p>
+<hr/>
+<button (click) = "share()">
+ share details
+</button>
+<app-product-alerts
+ [productInner]="productOuter"  (notify) = "onNotify()">
+</app-product-alerts>
+</div>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
